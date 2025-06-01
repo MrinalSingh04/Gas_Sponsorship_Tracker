@@ -1,66 +1,57 @@
-## Foundry
+# Gas Sponsorship Tracker
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## What is this project?
 
-Foundry consists of:
+Gas Sponsorship Tracker is a smart contract project built with Solidity and deployed locally using Foundry. It allows users to "sponsor" or pay gas fees on behalf of other Ethereum addresses. This can be helpful in scenarios where someone wants to support friends, dApps, or services by covering their transaction costs.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+---
 
-## Documentation
+## Why build this?
 
-https://book.getfoundry.sh/
+In Ethereum and other EVM-compatible chains, users need to pay gas fees to execute transactions. However, there are cases where you might want to help others by sponsoring their gas fees. This project aims to enable that in a decentralized and transparent way.
 
-## Usage
+Use cases include:
 
-### Build
+- Supporting new users who don't have enough ETH for gas fees
+- Enabling dApps to sponsor gas fees for users to improve UX
+- Community sponsorship programs for projects and events
 
-```shell
-$ forge build
+---
+
+## Features
+
+- Users can deposit ETH to sponsor gas fees
+- Track sponsorship balances for each sponsored address
+- Withdraw sponsored funds
+- Designed for easy integration with frontends and dApps
+
+---
+
+## Tech Stack
+
+- Solidity — Smart contract language
+- Foundry — Development, testing, and deployment toolkit
+- Anvil — Local Ethereum node emulator
+
+---
+
+## Getting Started
+
+1. Clone the repository
+2. Install Foundry
+3. Run Anvil to start a local blockchain
+4. Deploy the contract using Foundry's forge script commands
+5. Interact with the contract via scripts or your own frontend
+
+---
+
+## How to Deploy
+
+```bash
+forge script script/Deploy.s.sol --rpc-url http://127.0.0.1:8545 --private-key <YOUR_PRIVATE_KEY> --broadcast
+
 ```
 
-### Test
+## License
 
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+MIT License
